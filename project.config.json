@@ -7,7 +7,7 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "dist/wx",
+	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
 	"appid": "wxaf6e6acd04040561",
 	"projectname": "mpvue-demo",
