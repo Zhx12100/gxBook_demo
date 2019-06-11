@@ -7,11 +7,18 @@
     <div class="share_box">
 
     </div>
+    <!-- <addBtn @addBtn="addBtn_parent" text="添加书籍"
+      textColor="white"
+      btnWidth="200rpx"
+      btnHeight="300rpx"
+      btnBcakColor="pink"
+      btnRadius="50rpx"
+      btnLine="300rpx"></addBtn> -->
   </div>
 </template>
 
 <script>
-// import card from '@/components/card'
+// import addBtn from '@/components/addBtn'
 
 export default {
   data () {
@@ -23,10 +30,15 @@ export default {
       }
     }
   },
-
+  // components:{
+  //   addBtn
+  // },
   methods: {
     addBook () {
       console.log('添加书记')
+    },
+    addBtn_parent(){
+      console.log('ggg')
     }
   },
 
@@ -49,5 +61,8 @@ export default {
       margin-top:-70rpx;
     }
     height: 355rpx;
+  }
+  .share_box{
+    
   }
 </style>
