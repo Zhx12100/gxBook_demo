@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -44,6 +44,21 @@
 					"id": -1,
 					"name": "书架",
 					"pathName": "pages/index/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分享书架",
+					"pathName": "pages/shareBook/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "书籍详情",
+					"pathName": "pages/bookDetail/main",
+					"query": "",
 					"scene": null
 				}
 			]
