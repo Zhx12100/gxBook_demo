@@ -22,13 +22,31 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "添加书籍",
+					"pathName": "pages/addBook_code/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "书架",
+					"pathName": "pages/index/main",
+					"scene": null
+				}
+			]
 		}
 	}
 }

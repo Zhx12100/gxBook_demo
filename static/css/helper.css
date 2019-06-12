@@ -54,3 +54,6 @@ p,span,b,small{
 .lh_1{
   line-height: 1;
 }
+button::after {
+  border: none;
+}

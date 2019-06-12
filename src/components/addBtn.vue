@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="addBtn_son" class="btn" 
-      :style="{ color : textColor, width : btnWidth,height : btnHeight, 
+      :style="{ color : textColor, width : btnWidth,height : btnHeight, 'font-size' : textSize,
                 background : btnBcakColor,'border-radius' : btnRadius,'line-height' : btnLine
       }">
       {{text}}
@@ -22,7 +22,8 @@
       'btnHeight' :String,
       'btnBcakColor' :String,
       'btnRadius' :String,
-      'btnLine' :String
+      'btnLine' :String,
+      'textSize':String
     },
     methods: {
       addBtn_son(){
