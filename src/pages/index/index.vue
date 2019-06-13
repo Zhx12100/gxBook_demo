@@ -1,43 +1,49 @@
 <template>
-  <div v-if="bookArr==''">
-    <div class="add_book_box flex flex_type_6">
-      <img class="add_book" @click="addBook" src="/static/images/index/book_none.png" alt="">
-      <p class="remark">添加书籍</p>
-    </div>
-    <div class="share_box flex">
-      <button class="share_btn flex" @click="shareBoox">
-        <img src="/static/images/index/share_btn.png" alt="">
-        <span>分享</span>
-      </button>
-    </div>
-    <div class="book_ul flex flex_type_7">
-      <div class="book_list ac" v-for="(item, index) in bookArr" :key="index">
-        <img class="boox_list_img" :src="item.bookImg" alt="">
-        <p class="txt_ellipsis2">{{item.bookRemark}}</p>
+  <div>
+    <headTop></headTop>
+    <div v-if="bookArr==''">
+    
+      <div class="add_book_box flex flex_type_6">
+        <img class="add_book" @click="addBook" src="/static/images/index/book_none.png" alt="">
+        <p class="remark">添加书籍</p>
       </div>
-      <!-- 两个空占位 -->
-      <div class="book_list flexKong"></div>
-      <div class="book_list flexKong"></div>
+      <div class="share_box flex">
+        <button class="share_btn flex" @click="shareBoox">
+          <img src="/static/images/index/share_btn.png" alt="">
+          <span>分享</span>
+        </button>
+      </div>
+      <div class="book_ul flex flex_type_7">
+        <div class="book_list ac" v-for="(item, index) in bookArr" :key="index">
+          <img class="boox_list_img" :src="item.bookImg" alt="">
+          <p class="txt_ellipsis2">{{item.bookRemark}}</p>
+        </div>
+        <!-- 两个空占位 -->
+        <div class="book_list flexKong"></div>
+        <div class="book_list flexKong"></div>
+      </div>
+    </div>
+    <div v-else>
+      <div class="book_ul_none ac">
+        <img src="/static/images/index/book_ul_none.png" alt="">
+        <p>您还没有添加书籍到书架！</p>
+        <addBtn @addBtn="addBook" text="去添加"
+        textColor="white"
+        textSize="32rpx"
+        btnWidth="400rpx"
+        btnHeight="76rpx"
+        btnBcakColor="#2bcf9c"
+        btnRadius="50rpx"
+        btnLine="76rpx"></addBtn>
+      </div>
     </div>
   </div>
-  <div v-else>
-    <div class="book_ul_none ac">
-      <img src="/static/images/index/book_ul_none.png" alt="">
-      <p>您还没有添加书籍到书架！</p>
-      <addBtn @addBtn="addBook" text="去添加"
-      textColor="white"
-      textSize="32rpx"
-      btnWidth="400rpx"
-      btnHeight="76rpx"
-      btnBcakColor="#2bcf9c"
-      btnRadius="50rpx"
-      btnLine="76rpx"></addBtn>
-    </div>
-  </div>
+  
 </template>
 
 <script>
 import addBtn from '@/components/addBtn'
+import headTop from '@/components/headTop'
 
 export default {
   data () {
@@ -64,7 +70,8 @@ export default {
     }
   },
   components:{
-    addBtn
+    addBtn,
+    headTop
   },
   methods: {
     //添加书籍按钮

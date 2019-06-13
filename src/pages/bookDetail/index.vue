@@ -45,24 +45,63 @@
           </ul>
         </div>
       </div>
+      <div class="book_details_operation flex">
+        <button class="guize_box ac active" @click="guize" hover-class="hover_button">
+          <img src="/static/images/operation/guize.png" alt="">
+          <p>规则</p>
+        </button>
+        <button class="zan_box ac " @click="zanClick" hover-class="hover_button">
+          <img v-if="zan==false" src="/static/images/operation/zan.png" alt="">
+          <img v-else src="/static/images/operation/zan_active.png" alt=""> 
+          <p v-if="zan==false">点赞</p>
+          <p v-else style="color:rgba(231,62,81,1)!important;">点赞</p>
+        </button>
+        <button class="shou_box ac" @click="shouClick" hover-class="hover_button">
+          <img v-if="shou==false" src="/static/images/operation/shou.png" alt="">
+          <img v-else src="/static/images/operation/shou_active.png" alt="">
+          <p v-if="shou==false">收藏</p>
+          <p v-else style="color:rgba(231,62,81,1)!important;">收藏</p>
+        </button>
+        <addBtn @addBtn="youJi" text="请求邮寄"
+        textColor="white"
+        textSize="32rpx"
+        btnWidth="210rpx"
+        btnHeight="76rpx"
+        btnBcakColor="#2BCF9C"
+        btnRadius="6rpx"
+        btnLine="76rpx"></addBtn>
+      </div>
+      <button class="share_box flex" hover-class="hover_button">
+        <img src="/static/images/share_btn.png" alt="">
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-// import addBtn from '@/components/addBtn'
+import addBtn from '@/components/addBtn'
 // const url = require("../../../static/images/index/bg_btn.png");
 export default {
   data () {
     return {
-
+      zan:false,
+      shou:false
     }
   },
   components:{
-    // addBtn
+    addBtn
   },
   methods: {
-
+    //添加书籍按钮
+    guize () {
+      console.log('规则');
+    },
+    zanClick () {
+      this.zan = !this.zan;
+    },
+    shouClick () {
+      this.shou = !this.shou;
+    },
   },
   mounted () {
 
@@ -189,7 +228,60 @@ export default {
             }
           }
         }
+        .book_details_operation{
+          width:690rpx;
+          height:98rpx;
+          background:rgba(250,250,250,1);
+          position:absolute;
+          bottom:100rpx;
+          left:50%;
+          transform: translateX(-50%);
+          padding:0 10rpx;
+          /deep/ .btn{
+            margin-left:50rpx;
+          }
+          button{
+            width:100rpx;
+            border: none;
+            padding:0;
+            // background:none;
+            line-height: 1;
+            img{
+              width: 32rpx;
+              height:32rpx;
+            }
+            p{
+              line-height: 1;
+              font-size:24rpx;
+              color:rgba(102,102,102,1);
+              margin-top: 10rpx;
+            }
+          }          
+          .active{
+            p{
+              color:rgba(231,62,81,1)!important;
+            }            
+          }          
+        }
+        .share_box{
+          width: 100rpx;
+          height:100rpx;
+          background:transparent;
+          position:absolute;
+          right:10rpx;
+          top:10rpx;
+          img{
+            width:40rpx;
+            height:40rpx;
+            
+          }
+        }
       }
       
+    }
+    .hover_button{
+      opacity: 0.9;//透明度变化
+      transform: scale(0.7,0.7);//缩放
+      transition: all .2s;
     }
 </style>

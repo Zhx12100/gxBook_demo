@@ -54,6 +54,12 @@ p,span,b,small{
 .lh_1{
   line-height: 1;
 }
+/* 重置小程序的按钮样式 */
 button::after {
   border: none;
+}
+button{
+  padding:0;
+  display:inline-block;
+  line-height: 1;
 }

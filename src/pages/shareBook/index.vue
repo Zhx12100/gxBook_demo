@@ -19,7 +19,7 @@
 </template>
 
 <script>
-// import addBtn from '@/components/addBtn'
+import addBtn from '@/components/addBtn'
 
 export default {
   data () {
@@ -46,7 +46,7 @@ export default {
     }
   },
   components:{
-    // addBtn
+    addBtn
   },
   methods: {
   },
