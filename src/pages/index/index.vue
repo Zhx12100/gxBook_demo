@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <headTop></headTop>
-    <div v-if="bookArr==''">
+  <div :style="{'padding-top':pageTop}">
+    <!-- <headTop></headTop> -->
+    <div v-if="bookArr!=''">
     
       <div class="add_book_box flex flex_type_6">
         <img class="add_book" @click="addBook" src="/static/images/index/book_none.png" alt="">
@@ -43,15 +43,16 @@
 
 <script>
 import addBtn from '@/components/addBtn'
-import headTop from '@/components/headTop'
+// import headTop from '@/components/headTop'
 
 export default {
   data () {
     return {
+      pageTop:this.globalData.headerHeight,
       motto: 'Hello miniprograme',
       bookArr:[
         {
-          bookImg:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560315658976&di=4c6acb64418ad39aa9cafd41e19682cb&imgtype=0&src=http%3A%2F%2Fbookbk.img.ireader.com%2Fgroup6%2FM00%2FE7%2FEC%2FCmQUNlsLwkaECSEsAAAAAJOpcg0715902694.jpg%3Fv%3DoMXJSqI4%26t%3DCmQUNlsL1Q4.",
+          bookImg:"https://b325.photo.store.qq.com/psb?/V14UmIh83jEXEo/J2Y8Pk0L0DTp3k*nsEgD9XD1gi8uL4dduCMuW0gp30A!/b/dLotusE3LgAA&bo=mAEyAQAAAAABB4o!&rf=viewer_4",
           bookRemark:"视界.无界：写给UI设计师给UI设计师给UI设计师"
         },
         {
@@ -70,8 +71,8 @@ export default {
     }
   },
   components:{
-    addBtn,
-    headTop
+    addBtn
+    // headTop
   },
   methods: {
     //添加书籍按钮
@@ -88,6 +89,7 @@ export default {
   },
   mounted () {
     console.log('书架的mounted')
+    console.log(this.globalData)
   }
 }
 </script>

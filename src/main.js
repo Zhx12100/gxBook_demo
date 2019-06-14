@@ -8,3 +8,6 @@ App.mpType = 'app'
 // Vue.component('headTop':headTop,)
 const app = new Vue(App)
 app.$mount()
+//设置全局变量
+Vue.prototype.globalData = getApp().globalData
+

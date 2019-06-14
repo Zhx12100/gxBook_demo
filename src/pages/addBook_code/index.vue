@@ -67,7 +67,7 @@ export default {
         margin:auto auto;        
         box-sizing: border-box;
         margin: 12rpx;
-        background:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560955569&di=3438d2d9877001bff89e7ade2eac5a89&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F00%2F74%2F52%2F58b825272130d_610.jpg') no-repeat;
+        background:url('http://a3.qpic.cn/psb?/V14UmIh84649nP/06vLVJ76HVu7ZUpoBAKCQJU**WfWd9j8OKs84Ui69P8!/b/dFYBAAAAAAAA&ek=1&kp=1&pt=0&bo=OATYBgAAAAADF9A!&tl=1&vuin=878076517&tm=1560520800&sce=60-2-2&rf=viewer_4') no-repeat;
         background-size:100% 100%;
         img{
           width: 286rpx;

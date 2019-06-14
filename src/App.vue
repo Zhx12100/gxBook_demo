@@ -23,6 +23,17 @@ export default {
       logs.unshift(Date.now())
       mpvue.setStorageSync('logs', logs)
     }
+    //获取本机状态栏高度
+    wx.getSystemInfo({
+      success: res => {
+        // 单位rpx
+        console.log(this.globalData)
+        // this.globalData.headerHeight = res.statusBarHeight / ( res.windowWidth / 750 ) + 88; 
+        console.log('本机状态栏高度',res.statusBarHeight / ( res.windowWidth / 750 ) + 88)
+        
+      }
+    })
+
   },
   log () {
     console.log(`log at:${Date.now()}`)

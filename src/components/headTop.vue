@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="headTop" style="background:pink">
+    <div class="headTop" :style="{height:height}">
       <!-- {{title}} -->
     </div>
   </div>
@@ -9,7 +9,7 @@
   export default {
     data () {
       return {
-
+        height:this.globalData.headerHeight
       }
     },
     props :{
@@ -22,10 +22,13 @@
     },
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .headTop{
-    height:400rpx;
+    // height:138rpx;
     width:100%;
-    background:green;
+    background:white;
+    position:fixed;
+    top:0;
+    left:0;  
   }
 </style>
