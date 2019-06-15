@@ -1,5 +1,5 @@
 <template>
-  <div style="font-size:0;line-height:1;">
+  <div class="ac" style="font-size:0;line-height:1;">
     <button @click="addBtn_son" class="btn" 
       :style="{ color : textColor, width : btnWidth,height : btnHeight, 'font-size' : textSize,
                 background : btnBcakColor,'border-radius' : btnRadius,'line-height' : btnLine

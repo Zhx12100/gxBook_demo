@@ -2,8 +2,10 @@
   <div>
     <div class="tips" :class="showActive">
       <div class="tips_details">
-        {{text}}
-        <div>
+        <div class="tips_details_text">
+          {{text}}
+        </div>
+        <div class="flex">
           <slot></slot>
         </div>
       </div>
@@ -42,7 +44,7 @@
     top:100%;
     left:0;  
     transition: all .5s;
-    opacity: 0;   
+    opacity: 0; 
     .tips_details{
       position: absolute;;
       top:-100%;
@@ -62,6 +64,18 @@
       line-height:46rpx;
       text-align: center;   
       transition: all .5s; 
+      .tips_details_text{
+        overflow-y: scroll;
+        max-height: 500rpx; 
+        margin-top:0rpx!important;
+        font-size:28rpx!important;
+      }
+      // 隐藏滚动条
+      ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        color: transparent;
+      }
       div{
         margin-top:50rpx;
         font-size:0;

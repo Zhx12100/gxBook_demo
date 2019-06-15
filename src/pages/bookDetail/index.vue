@@ -26,7 +26,7 @@
             </li>
             <li class="share_footprint_son flex flex_type_1">
               <div class="rank">
-                <img src="/static/images/bookDetail/first.png" alt="">
+                <img src="/static/images/bookDetail/second.png" alt="">
               </div>
               <img class="head" src="http://b.hiphotos.baidu.com/zhidao/pic/item/48540923dd54564e7b326b2bb3de9c82d1584f49.jpg" alt="">
               <div class="xinxi flex flex_type_6">
@@ -36,7 +36,7 @@
             </li>
             <li class="share_footprint_son flex flex_type_1">
               <div class="rank">
-                <img src="/static/images/bookDetail/first.png" alt="">
+                <img src="/static/images/bookDetail/third.png" alt="">
               </div>
               <img class="head" src="http://b.hiphotos.baidu.com/zhidao/pic/item/48540923dd54564e7b326b2bb3de9c82d1584f49.jpg" alt="">
               <div class="xinxi flex flex_type_6">
@@ -64,7 +64,8 @@
           <p v-if="shou==false">收藏</p>
           <p v-else style="color:rgba(231,62,81,1)!important;">收藏</p>
         </button>
-        <!-- 可以邮寄 -->
+        <!-- 作为请求者 -->
+          <!-- 可以邮寄 -->
         <addBtn v-if="youState==0"  @addBtn="you_go" text="请求邮寄"
         textColor="white"
         textSize="32rpx"
@@ -73,7 +74,7 @@
         btnBcakColor="#2BCF9C"
         btnRadius="6rpx"
         btnLine="76rpx"></addBtn>
-        <!-- 查看邮寄 -->
+          <!-- 查看邮寄 -->
         <addBtn v-else-if="youState==1" @addBtn="you_look" text="查看邮寄"
         textColor="#2BCF9C"
         textSize="32rpx"
@@ -82,8 +83,18 @@
         btnBcakColor="#d5fcf0"
         btnRadius="6rpx"
         btnLine="76rpx"></addBtn>
-        <!-- 不可以请求邮寄 -->
-        <addBtn v-else @addBtn="you_none" text="请求邮寄"
+          <!-- 不可以请求邮寄 -->
+        <addBtn v-else-if="youState==2" @addBtn="you_none" text="请求邮寄"
+        textColor="white"
+        textSize="32rpx"
+        btnWidth="210rpx"
+        btnHeight="76rpx"
+        btnBcakColor="#bfbfbf"
+        btnRadius="6rpx"
+        btnLine="76rpx"></addBtn>
+        <!-- 作为贡献者 -->
+          <!-- 确认已邮寄-->
+        <addBtn v-else  @addBtn="you_comfirm" text="确认已邮寄"
         textColor="white"
         textSize="32rpx"
         btnWidth="210rpx"
@@ -98,7 +109,7 @@
     </div>
     <!-- 弹窗消息 -->
     <tips :showActive="tipsShow?'showActive':''" :text="text">
-      <addBtn  @addBtn="tips_comfirm" text="确认"
+      <addBtn @addBtn="tips_comfirm" text="确认"
         textColor="white"
         textSize="30rpx"
         btnWidth="146rpx"
@@ -106,6 +117,14 @@
         btnBcakColor="#2bcf9c"
         btnRadius="50rpx"
         btnLine="60rpx"></addBtn>
+        <!-- <addBtn slot="btn2"  @addBtn="tips_comfirm" text="确认"
+        textColor="white"
+        textSize="30rpx"
+        btnWidth="146rpx"
+        btnHeight="60rpx"
+        btnBcakColor="#2bcf9c"
+        btnRadius="50rpx"
+        btnLine="60rpx"></addBtn> -->
     </tips>
   </div>
 </template>
@@ -121,7 +140,7 @@ export default {
       zan:false,
       shou:false,
       text:"",
-      youState:2 ,//0 可以请求邮寄  1  查看邮寄   2  不可以请求邮寄
+      youState:2 ,//0 可以请求邮寄  1  查看邮寄   2  不可以请求邮寄  3  确认已邮寄
       tipsShow:false//控制提示框是否显示
     }
   },
@@ -141,14 +160,17 @@ export default {
     shouClick () {
       this.shou = !this.shou
     },
-    you_go () {
+    you_go () {//请求邮寄
       // this.tipsShow = false;
     },
-    you_look () {
+    you_look () {//查看邮寄
       this.tipsShow = true
     },
-    you_none () {
+    you_none () {//无法请求邮寄
       this.text = "此书仍然在上一个读者的阅读期内， 暂时无法请求邮寄。"
+      this.tipsShow = true
+    },
+    you_comfirm () {//确认邮寄
       this.tipsShow = true
     },
     tips_comfirm () {
@@ -156,9 +178,8 @@ export default {
     },
     //更多
     book_more () {
-      this.text = "《告别天堂》是作家笛安创作的首部长篇小说，首次出版于2005年2月。该小说分别从宋天杨、江东、肖强和周雷的个人视角来描述他们的生活，并以此回忆高中时代的他们——温暖而倔强的天杨，绚烂而脆弱的方可寒，带点江湖味道其实不太坏的肖强，简单憨厚的周雷，还有明明比谁都敏感却羞于承认的江东。小说通过展现天杨等人青春岁月中的故事，反映了作者对于理想与现实的纷繁看法。"
-      this.tipsShow = true
-      
+      this.text = "《告别天堂》是作家笛安创作的首部长篇小说，《告别天堂》是作家笛安创作的首部长篇小说，首次出版于2005年2《告别天堂》是作家笛安创作的首部长篇小说，首次出版于2005年2首次出版于2005年2月。该小说分别从宋天杨、江东、肖强和周雷的个人视角来描述他们的生活，并以此回忆高中时代的他们——温暖而倔强的天杨，绚烂而脆弱的方可寒，带点江湖味道其实不太坏的肖强，简单憨厚的周雷，还有明明比谁都敏感却羞于承认的江东。小说通过展现天杨等人青春岁月中的故事，反映了作者对于理想与现实的纷繁看法。"
+      this.tipsShow = true      
     }
   },
   mounted () {

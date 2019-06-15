@@ -5,6 +5,11 @@
     "pages/counter/main",
     "pages/addBook_code/main",
     "pages/shareBook/main",
+    "pages/setLocation/main",
+    "pages/mine/main",
+    "pages/mineCollect/main",
+    "pages/discover/main",
+    "pages/mail/main",
     "pages/bookDetail/main"
   ],
   "window": {
@@ -17,9 +22,8 @@
   "tabBar": {
     "color": "#999",
     "backgroundColor": "#fafafa",
-    "selectedColor": "#333",
     "borderStyle": "white",
-
+    "selectedColor":"#2BCF9C",
     "list": [
       {
         "text": "书架",
@@ -29,7 +33,7 @@
       }, 
       {
         "text": "发现",
-        "pagePath": "pages/logs/main",
+        "pagePath": "pages/discover/main",
         "iconPath": "static/images/icon/icon2_none.png",
         "selectedIconPath": "static/images/icon/icon2_active.png"
       },
@@ -41,23 +45,38 @@
       }, 
       {
         "text": "我的",
-        "pagePath": "pages/logs/main",
+        "pagePath": "pages/mine/main",
         "iconPath": "static/images/icon/icon4_none.png",
         "selectedIconPath": "static/images/icon/icon4_active.png"
       }
     ],
 
-    "items": [{
-      "name": "首页",
+    "items": [
+    {
+      "name": "书架",
       "pagePath": "pages/index/main",
-      "icon": "static/tabs/home.png",
-      "activeIcon": "static/tabs/home-active.png"
-    }, {
-      "name": "订单",
+      "icon": "static/images/icon/icon1_none.png",
+      "activeIcon": "static/images/icon/icon1_active.png"
+    }, 
+    {
+      "name": "发现",
+      "pagePath": "pages/discover/main",
+      "icon": "static/images/icon/icon2_none.png",
+      "activeIcon": "static/images/icon/icon2_active.png"
+    },
+    {
+      "name": "消息",
+      "pagePath": "pages/index/main",
+      "icon": "static/images/icon/icon3_none.png",
+      "activeIcon": "static/images/icon/icon3_active.png"
+    }, 
+    {
+      "name": "我的",
       "pagePath": "pages/logs/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
-    }],
+      "icon": "static/images/icon/icon4_none.png",
+      "activeIcon": "static/images/icon/icon4_active.png"
+    }
+  ],
     "position": "bottom"
   }
 }
