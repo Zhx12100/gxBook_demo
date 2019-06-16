@@ -14,10 +14,10 @@
         </button>
       </div>
       <div class="book_ul flex flex_type_7">
-        <div class="book_list ac" v-for="(item, index) in bookArr" :key="index">
+        <navigator url="/pages/bookDetail/main" class="book_list ac" v-for="(item, index) in bookArr" :key="index">
           <img class="boox_list_img" :src="item.bookImg" alt="">
           <p class="txt_ellipsis2">{{item.bookRemark}}</p>
-        </div>
+        </navigator>
         <!-- 两个空占位 -->
         <div class="book_list flexKong"></div>
         <div class="book_list flexKong"></div>

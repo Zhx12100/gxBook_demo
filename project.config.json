@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -87,6 +87,26 @@
 					"name": "我的",
 					"pathName": "pages/mine/main",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/message/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息详情",
+					"pathName": "pages/messageDetail/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "邮箱详情",
+					"pathName": "pages/messageDetail/main",
 					"scene": null
 				}
 			]

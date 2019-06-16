@@ -10,6 +10,8 @@
     "pages/mineCollect/main",
     "pages/discover/main",
     "pages/mail/main",
+    "pages/messageDetail/main",
+    "pages/message/main",
     "pages/bookDetail/main"
   ],
   "window": {

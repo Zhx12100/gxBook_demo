@@ -62,7 +62,11 @@ export default {
   }
 }
 </script>
-
+<style lang="wxss">
+  page{
+      height:100%;
+  }
+</style>
 <style lang="scss" scoped>
   
   .set_location_box{
@@ -70,7 +74,8 @@ export default {
     padding: 0 30rpx;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, .3);
     border:none;
-    
+    height: 100%;
+    box-sizing: border-box;
     .inp{
       height:100rpx;
       border-bottom:1px solid #eee;
@@ -112,6 +117,7 @@ export default {
       font-size: 30rpx;
       color:#444;
       height: 200rpx;
+      border-bottom:1px solid #eee;
     }
     /deep/ .btn{
       margin-top:160rpx;
